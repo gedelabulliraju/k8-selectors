@@ -15,10 +15,10 @@ spec:
     effect: "NoSchedule"
   affinity:
     nodeAffinity:
-      prefferredDuringSchedulingIgnoredDuringExecution:
+      preferredDuringSchedulingIgnoredDuringExecution:
       - weight: 1
         preference:
-        - matchExpressions:
+          matchExpressions:
           - key: another-node-label-key
             operator: In
             values:
