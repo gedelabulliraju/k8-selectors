@@ -9,7 +9,8 @@ spec:
   - name: nginx
     image: nginx:alpine
 ---
-kind: Pod
+apiVersion: v1
+kind: Pod-1
 metadata:
   name: nginx
 spec:
@@ -21,7 +22,6 @@ spec:
   affinity:
     podAffinity:
       requiredDuringSchedulingIgnoredDuringExecution:
-      - weight: 1
         labelSelector:
           matchExpressions:
           - key: purpose
@@ -31,7 +31,7 @@ spec:
         topologyKey: topology.kubernetes.io/zone
 ---
 apiVersion: v1
-kind: Pod
+kind: Pod-2
 metadata:
   name: nginx
 spec:
@@ -46,9 +46,8 @@ spec:
     value: "gpu"
     effect: "NoSchedule"
   affinity:
-    podAntyAffinity:
-      requiredDuringSchedulingIgnoredDuringExecution::
-      - weight: 5
+    podAntiAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
         labelSelector:
           matchExpressions:
           - key: another-node-label-key
