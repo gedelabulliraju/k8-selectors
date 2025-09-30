@@ -40,18 +40,13 @@ spec:
     image: nginx:alpine
 #  nodeSelector:
 #   kubernetes.io/hostname: ip-192-168-8-24.ec2.internal
-  tolerations:
-  - key: "hardware"
-    operator: "Equal"
-    value: "gpu"
-    effect: "NoSchedule"
   affinity:
     podAntiAffinity:
       requiredDuringSchedulingIgnoredDuringExecution:
         labelSelector:
           matchExpressions:
-          - key: another-node-label-key
+          - key: purpose
             operator: In
             values:
-            - another-node-label-value
+            - affinity
         topologyKey: topology.kubernetes.io/zone
