@@ -15,7 +15,7 @@ spec:
     effect: "NoSchedule"
   affinity:
     nodeAffinity:
-      requiredDuringSchedulingIgnoredDuringExecution:
+      prefferredDuringSchedulingIgnoredDuringExecution:
       - weight: 1
         preference: 
         - matchExpressions:
