@@ -12,10 +12,10 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: nginx
+  name: nginx-1
 spec:
   containers:
-  - name: nginx-1
+  - name: nginx
     image: nginx:alpine
 #  nodeSelector:
 #   kubernetes.io/hostname: ip-192-168-8-24.ec2.internal
