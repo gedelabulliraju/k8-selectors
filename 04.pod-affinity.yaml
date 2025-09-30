@@ -22,7 +22,7 @@ spec:
   affinity:
     podAffinity:
       requiredDuringSchedulingIgnoredDuringExecution:
-        labelSelector:
+      - labelSelector:
           matchExpressions:
           - key: purpose
             operator: In
@@ -43,7 +43,7 @@ spec:
   affinity:
     podAntiAffinity:
       requiredDuringSchedulingIgnoredDuringExecution:
-        labelSelector:
+      - labelSelector:
           matchExpressions:
           - key: purpose
             operator: In
