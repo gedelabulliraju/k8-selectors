@@ -19,6 +19,6 @@ spec:
         nodeSelectorTerms:
         - matchExpressions:
           - key: hardware
-            operator: Equal
+            operator: In
             values:
             - gpu
