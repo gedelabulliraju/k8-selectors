@@ -6,6 +6,8 @@ spec:
   containers:
   - name: nginx
     image: nginx:alpine
+  nodeSelector:
+    kubernetes.io/hostname: ip-192-168-8-24.ec2.internal
   tolerations:
   - key: "hardware"
     operator: "Equal"
